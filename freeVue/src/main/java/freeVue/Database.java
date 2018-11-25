@@ -26,4 +26,18 @@ public final class Database {
             e.printStackTrace();
         }
     }
+
+    public void getScreenings() {
+        try (Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
+            try (ResultSet rs = stmt.executeQuery("select * from " + "VENUES");){
+                // Iterate through the data              
+                 while(rs.next()){
+                }
+
+            }
+        // Handle any errors that may have occurred.
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
