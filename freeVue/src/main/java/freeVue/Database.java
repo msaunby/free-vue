@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Date;
 
 public final class Database {
 
@@ -27,11 +30,18 @@ public final class Database {
         }
     }
 
-    public void getScreenings() {
+    public List<Screening> getScreenings() {
+        List<Screening> screenings = new ArrayList<Screening>();
+        System.out.println("GET SCREENINGS");
         try (Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
-            try (ResultSet rs = stmt.executeQuery("select * from " + "VENUES");){
+            try (ResultSet rs = stmt.executeQuery("select * from " + "SCREENINGS");){
                 // Iterate through the data              
                  while(rs.next()){
+                    System.out.println("ID: " + rs.getObject(1));
+                    System.out.println("Date: " + rs.getObject(2));
+                    System.out.println("Venue: " + rs.getObject(3));
+                    System.out.println("Film: " + rs.getObject(4));
+                    screenings.add(new Screening(rs.getInt(1),(Date)rs.getObject(2),rs.getInt(3),rs.getInt(4)));
                 }
 
             }
@@ -39,5 +49,6 @@ public final class Database {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return screenings;
     }
 }

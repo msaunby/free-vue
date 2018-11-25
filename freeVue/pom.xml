@@ -19,11 +19,17 @@
 
  <dependencies>
     <dependency>
-     <groupId>javax</groupId>
-     <artifactId>javaee-api</artifactId>
-     <version>8.0</version>
-     <scope>provided</scope>
+        <groupId>javax</groupId>
+        <artifactId>javaee-api</artifactId>
+        <version>8.0</version>
+        <scope>provided</scope>
    </dependency>
+
+    <dependency>
+        <groupId>com.microsoft.sqlserver</groupId>
+        <artifactId>mssql-jdbc</artifactId>
+        <version>7.0.0.jre10</version>
+    </dependency>
 
    <dependency>
         <groupId>junit</groupId>

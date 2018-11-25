@@ -7,14 +7,13 @@ public final class Screening {
     Film film;
     Date date;
 
-    private Screening() {
+    public Screening(int id, Date date, int venue, int film) {
+        this.date = date;
     }
 
-    public Screening[] getScreenings(int venueID) {
-        Screening screenings[];
-        screenings = new Screening[2];
-        screenings[0] = new Screening();
-        return screenings;
+    public String htmlTr(){
+        String tr = "<tr><td>" + this.date + "</td><td>Exeter Pheonix</td><td>Alien</td><td>1</td>";
+        return tr;
     }
 
     public Film getFilm(){
