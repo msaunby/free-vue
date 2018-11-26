@@ -6,15 +6,6 @@
       version="3.1">
 
    <servlet>
-      <servlet-name>Email</servlet-name>
-      <servlet-class>EmailServlet</servlet-class>
-   </servlet>
-   <servlet-mapping>
-      <servlet-name>Email</servlet-name>
-      <url-pattern>/EmailForm</url-pattern>
-   </servlet-mapping>
-
-   <servlet>
       <servlet-name>Screenings</servlet-name>
       <servlet-class>ScreeningsServlet</servlet-class>
    </servlet>
@@ -23,15 +14,33 @@
       <url-pattern>/screenings</url-pattern>
    </servlet-mapping>
 
+   <servlet>
+      <servlet-name>Order</servlet-name>
+      <servlet-class>OrderServlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>Order</servlet-name>
+      <url-pattern>/OrderForm</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>Email</servlet-name>
+      <servlet-class>EmailServlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>Email</servlet-name>
+      <url-pattern>/EmailForm</url-pattern>
+   </servlet-mapping>
+
 
    <!-- add more servlets here, like this ...
 
    <servlet>
-     <servlet-name>somethingServlet</servlet-name>
-     <jsp-file>com.example.classname</jsp-file>
+     <servlet-name>something</servlet-name>
+     <servlet-class>com.example.classname</servlet-class>
    </servlet>
    <servlet-mapping>
-     <servlet-name>somethingServlet</servlet-name>
+     <servlet-name>something</servlet-name>
      <url-pattern>/myFormUrl/*</url-pattern>
    </servlet-mapping>   
 

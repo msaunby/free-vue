@@ -4,7 +4,6 @@ import javax.servlet.http.*;
 import java.util.Enumeration; 
 
 public class EmailServlet extends HttpServlet {
-    int accesses = 0;
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
          throws IOException, ServletException
