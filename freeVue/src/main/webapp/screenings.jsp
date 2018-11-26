@@ -15,10 +15,10 @@
   <table class="table table-striped">
   <thead>
     <tr>
+      <th scope="col">Screening</th>
       <th scope="col">Date</th>
       <th scope="col">Venue</th>
       <th scope="col">Film</th>
-      <th scope="col">Tickets</th>
     </tr>
   </thead>
   <tbody>

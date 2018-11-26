@@ -4,19 +4,24 @@ import java.util.Date;
 
 public final class Screening {
 
-    Film film;
+    int id;
     Date date;
+    String venue;
+    String film;
 
-    public Screening(int id, Date date, int venue, int film) {
+    public Screening(int id, Date date, String venue, String film) {
+        this.id = id;
         this.date = date;
+        this.venue = venue;
+        this.film = film;
     }
 
     public String htmlTr(){
-        String tr = "<tr><td>" + this.date + "</td><td>Exeter Pheonix</td><td>Alien</td><td>1</td>";
+        String tr = "<tr><td>"+this.id+"</td><td>"+this.date+"</td><td>"+this.venue+"</td><td>"+this.film+"</td></tr>";
         return tr;
     }
 
-    public Film getFilm(){
+    public String getFilm(){
         return this.film;    
     }
 

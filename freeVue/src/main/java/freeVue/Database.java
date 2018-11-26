@@ -31,17 +31,21 @@ public final class Database {
     }
 
     public List<Screening> getScreenings() {
+        //String query =  "select * from SCREENINGS";
+        String query =  "select SCREENING_ID, DATE, NAME, TITLE "
+        + " from SCREENINGS " 
+        + " INNER JOIN FILMS ON SCREENINGS.FILM_ID=FILMS.FILM_ID "
+        + " INNER JOIN VENUES ON SCREENINGS.VENUE_ID=VENUES.VENUE_ID";
         List<Screening> screenings = new ArrayList<Screening>();
-        System.out.println("GET SCREENINGS");
         try (Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
-            try (ResultSet rs = stmt.executeQuery("select * from " + "SCREENINGS");){
+            try (ResultSet rs = stmt.executeQuery(query);){
                 // Iterate through the data              
                  while(rs.next()){
                     System.out.println("ID: " + rs.getObject(1));
                     System.out.println("Date: " + rs.getObject(2));
                     System.out.println("Venue: " + rs.getObject(3));
                     System.out.println("Film: " + rs.getObject(4));
-                    screenings.add(new Screening(rs.getInt(1),(Date)rs.getObject(2),rs.getInt(3),rs.getInt(4)));
+                    screenings.add(new Screening(rs.getInt(1),(Date)rs.getObject(2),rs.getString(3),rs.getString(4)));
                 }
 
             }

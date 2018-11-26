@@ -15,6 +15,9 @@ public class ScreeningsTest {
     @Test
     public void testGetScreenings() {
         List<Screening> screenings = db.getScreenings();
+        for(Screening s: screenings){
+            System.out.println( s.htmlTr() ); 
+        }
     }
 
 }
