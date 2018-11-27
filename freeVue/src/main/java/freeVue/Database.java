@@ -18,7 +18,7 @@ public final class Database {
 
     public void getVenues() {
         try (Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
-            try (ResultSet rs = stmt.executeQuery("select * from " + "VENUES");){
+            try (ResultSet rs = stmt.executeQuery("select * from VENUES");){
                 // Iterate through the data              
                  while(rs.next()){
                 }
