@@ -10,7 +10,7 @@ install:
   - mvn install -DskipTests=true
 
 script:
-    - mvn test; export MAVEN_RESULT=$?
+    - cd freeVue; mvn test; export MAVEN_RESULT=$?
     - if [ "$MAVEN_RESULT" -ne 0 ]; then exit 1; fi
 #    - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then mvn clean deploy --quiet --settings settings.xml; fi
 
