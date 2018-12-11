@@ -21,12 +21,5 @@ after_success:
 notifications:
   email:
     - mike@saunby.net
-#    - richard.vannieuwenhoven@adesso.at
-#    - elonen@iki.fi
-#    - diogo.duarte@techie.com
+
     
-env:
- global:
-  - secure: "OtD0z3y4/OjSzg8irVD8v/u0TElcw8AiCCXb7a0UQEnTpGxcf5DOdkvHv0hF4xjHKFtlMMHxevW+a4C4NuFR8it8ZJ/i2m24reB28JicDcRQY9nwV/BR/T08CRG9KDz5EuTHgfPJDF0y+5MiVNwJVhHFviBWKuXyIuYouJ5IHgc="
-  - secure: "tgTVycNLwYDM3U0EVK1TkffylQHfZihvSDC9QoZEo+wz9aBBLoAtUJP7DWltRQFOkfTeGltGHEfGM2/qkIG6Wz+hNFG/fveHqyI01JWXc64d7yBm7agaCP5uTtt2wjaZ7ZK5Mps5QoufblYu+j9gb2v31t9IdsJ9PUs0+wgE/WU="
-  
