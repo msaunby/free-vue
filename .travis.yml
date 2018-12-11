@@ -1,21 +1,21 @@
 language: java
 jdk:
-- openjdk7
+- openjdk8
 
 before_install:
   - cat ~/.m2/settings.xml
   - rm  ~/.m2/settings.xml
 
-install:
-  - mvn install -DskipTests=true
+# install:
+#  - mvn install -DskipTests=true
 
 script:
-    - cd freeVue; mvn test; export MAVEN_RESULT=$?
+    - cd freeVue && mvn test; export MAVEN_RESULT=$?
     - if [ "$MAVEN_RESULT" -ne 0 ]; then exit 1; fi
 #    - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then mvn clean deploy --quiet --settings settings.xml; fi
 
-after_success:
-  - mvn clean test jacoco:report coveralls:report
+# after_success:
+#  - mvn clean test jacoco:report coveralls:report
   
  
 notifications:
